@@ -113,7 +113,11 @@ let sum = function(a, b, c, d) {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(sum(1, 2, 3, 4));
+console.log(sum(1, 2, 3, 4));
+
+// Refactoring using an arrow function and then console.log
+const sumNew = (a, b, c, d) => `${a+b+c+d}`;
+console.log(sumNew(1, 2, 3, 4));
 
 
 let objectLit = function() {
@@ -125,7 +129,15 @@ let objectLit = function() {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(objectLit());
+console.log(objectLit());
+
+// Refactoring using an arrow function and then console.log
+const objectLitNew = () => ({
+  key1: 'value1',
+  key2: 'value2',
+  key3: 'value3'
+});
+console.log(objectLitNew());
 
 
 let sumAndProduct = function(a, b) {
@@ -135,7 +147,15 @@ let sumAndProduct = function(a, b) {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(sumAndProduct(3, 9));
+console.log(sumAndProduct(3, 9));
+
+// Refactoring using an arrow function and then console.log
+const sumAndProductNew = (a, b) =>{
+  let sum = a+b;
+  let product= a*b;
+  return [sum, product];
+};
+console.log(sumAndProductNew(3, 9));
 
 
 let message = function(name) {
@@ -143,7 +163,11 @@ let message = function(name) {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(message('Allie'));
+console.log(message('Allie'));
+
+// Refactoring using an arrow function and then console.log
+const messageNew = (name) => `Hello, ${name}!`;
+console.log(messageNew('Allie'));
 
 
 let Student = function(name, age, hometown) {
@@ -156,11 +180,19 @@ let joe = new Student('Joe', 'Schmoe', 100);
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 // Note that the arrow function will cause this code to break!
-// console.log(joe);
+console.log(joe);
+
+// Refactoring using an arrow function 
+// const StudentN = (name, age, hometown) => {
+//   this.name = name;
+//   this.age = age;
+//   this.hometown = hometown;
+// };
+// let joeN = new StudentN('Joe', 'Schmoe', 100);
+// console.log(joeN);
+// it will be kept commented because it's a TYPE ERROR: StudentN in not a constructor
 
 // TODO: After viewing the previous console.log(), return the code to a working state.
-
-
 
 Student.prototype.greeting = function() {
   return `Hi, my name is ${this.name}`;
@@ -168,7 +200,11 @@ Student.prototype.greeting = function() {
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 // Note that the arrow function will cause this method to break!
-// console.log(joe.greeting());
+console.log(joe.greeting());
+
+//Refactoring using an arrow function 
+// Student.prototype.greeting= () => `Hi, me name is ${this.name}`;
+// console.log(joe.greeting()); // it appears that in this previous line code <greeting> wasn't identified as a prototype function,but technically no errors occured .
 
 // TODO: After viewing the previous console.log(), return the code to a working state.
 
@@ -179,7 +215,11 @@ Student.courseName = function() {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(Student.courseName());
+console.log(Student.courseName());
+
+//Refactoring using an arrow function
+Student.courseName = () => 'This student is enrolled in Code 301.';
+console.log(Student.courseName()); // no errors and te same output , but as i said before here its not a prototype function that is related to <Student> , its a different separated one!. 
 
 
 
