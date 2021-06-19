@@ -199,8 +199,15 @@ Student.prototype.scopeArrow = () => console.log(this);
 
 // TODO: Write a COMMENT below to answer the following questions.
 // 1. What is "this" when joe.scope() is invoked?
+// it refers to the obj Student
 //
 // 2. What is "this" when joe.scopeArrow() is invoked?
+// it refers to the global object// the window object
 //
 // 3. Explain why "this" is different when an arrow function is used.
-//
+// This==>
+// a. in prototype method --> owner object
+// b. alone --> global object
+// c. inside function --> (with 'use strict'): undefined
+//                        (without 'use strict'): global object
+// d. event --> element recieving the event                       
